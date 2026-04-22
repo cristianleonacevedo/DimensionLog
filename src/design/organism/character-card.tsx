@@ -1,4 +1,5 @@
 import "tailwindcss";
+import { useNavigate } from "react-router-dom";
 
 type Character = {
   id: number;
@@ -14,8 +15,11 @@ type Props = {
 };
 
 function Character_Card({ character }: Props) {
+
+  const navigate = useNavigate();
+
   return (
-      <div className="bg-white p-4 rounded-2xl">
+      <div onClick={() => navigate(`/chracter/${character.id}`)} className="bg-white p-4 rounded-2xl ">
 
         <div className="flex justify-center">
             <img

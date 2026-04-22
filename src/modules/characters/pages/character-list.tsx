@@ -1,6 +1,6 @@
 import "tailwindcss"
 import Character_Card from "../../../design/organism/character-card"
-import Navbar from "../../../design/organism/Navbar"
+import Navbar from "../../../design/molecules/Navbar"
 
  const characters = [
     
