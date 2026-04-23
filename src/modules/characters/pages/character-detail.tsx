@@ -17,7 +17,7 @@ function Character_detail() {
         <div className="grid md:grid-cols-2 gap-6 p-6">
           <div className="w-full h-full">
             <img
-              src={data.img}
+              src={data.image}
               alt={data.name}
               className="w-full rounded-2xl"
             />
@@ -30,12 +30,6 @@ function Character_detail() {
             <div className="ml-4 p-4">
               <p className="text-2xl font-medium p-2">Specie: {data.species}</p>
               <p className="text-2xl font-medium p-2">Status: {data.status}</p>
-              <p className="text-2xl font-medium p-2">
-                Last Location: {data.lastLocation}
-              </p>
-              <p className="text-2xl font-medium p-2">
-                First seen: {data.First_seen}
-              </p>
             </div>
           </div>
         </div>
