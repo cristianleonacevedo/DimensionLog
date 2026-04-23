@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCharacters } from "../services/character.service";
-import type { Character } from "../types";
+import { characterKeys } from "./query-keys";
 
 export const useCharacterList = () => {
-  return useQuery<Character[], Error>({
-    queryKey: ["characters"],
+  return useQuery({
+    queryKey: characterKeys.lists(),
     queryFn: getCharacters,
   });
 };

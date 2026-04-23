@@ -8,10 +8,10 @@ type Props = {
 
 function SearchBar({ search, setSearch }: Props) {
   return (
-    <div className="rounded-full justify-center items-center">
+    <div className="rounded-full justify-center items-center pl-4 pb-4">
       <Input
         type="text"
-        placeholder="Que quieres ver?"
+        placeholder="Por quien viniste?"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="text-center"

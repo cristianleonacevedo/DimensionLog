@@ -2,7 +2,7 @@ import "tailwindcss";
 import Character_Card from "../../../design/organism/character-card";
 import Navbar from "../../../design/molecules/Navbar";
 import SearchBar from "../../../design/molecules/SearchBar";
-import ErrorMessage from "../../../design/molecules/Error-message"
+import ErrorMessage from "../../../design/molecules/Error-message";
 import { useCharacterList } from "../hooks/use-character-list";
 import CharacterCardSkeleton from "../../../design/organism/character-card-skeleton";
 import { useState } from "react";
@@ -14,17 +14,19 @@ function CharacterListPage() {
     c.name.toLowerCase().includes(search.toLowerCase())
   )
 
+  if (isLoading)
+    return (
+      <div className="">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <CharacterCardSkeleton key={i} />
+        ))}
+      </div>
+    );
 
-  if (isLoading) 
-    return(
-        <div className="">
-            {Array.from({ length: 8}).map((_, i) =>(
-                <CharacterCardSkeleton key={i} />
-            ))}
-        </div>
-    ) 
-  
-  if (error) return <ErrorMessage message="No se cargaron los personajes"></ErrorMessage>;
+  if (error)
+    return (
+      <ErrorMessage message="No se cargaron los personajes"></ErrorMessage>
+    );
 
   return (
     <div className="bg-gray-400 min-h-dvh pb-6">
